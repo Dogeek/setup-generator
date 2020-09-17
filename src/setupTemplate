@@ -1,0 +1,43 @@
+# Copyright (c) $gituser $year
+# For license see LICENSE
+
+from setuptools import setup, find_packages
+from $packagename import __version__
+
+
+with open('LICENSE') as f:
+    __license__ = f.read()
+
+with open('requirements.txt') as f:
+    __requirements__ = [line.strip() for line in f]
+
+with open('readme.md') as f:
+    __readme__ = f.read()
+
+long_description = f"""
+$packagename
+==========
+
+{__readme__}
+
+License
+-------
+{__license__}
+"""
+
+setup(
+    name="$packagename",
+    py_modules=["$packagename"],
+    version=__version__,
+    description="",
+    long_description=long_description,
+    author="$gituser",
+    url="https://www.github.com/$gituser/$packagename",
+    download_url="https://www.github.com/$gituser/$packagename/releases",
+    license="",
+    classifiers=[
+    ],
+    install_requires=__requirements__,
+    packages=find_packages(),
+    python_requires='>=3.7'
+)
